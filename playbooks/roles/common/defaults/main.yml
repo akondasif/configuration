@@ -17,7 +17,7 @@ COMMON_CFG_DIR: "{{ COMMON_BASE_DIR }}/etc"
 
 COMMON_ENVIRONMENT: 'default_env'
 COMMON_DEPLOYMENT: 'default_deployment'
-COMMON_PYPI_MIRROR_URL: 'http://pypi.douban.com/simple'
+COMMON_PYPI_MIRROR_URL: 'http://pypi.douban.com/simple  --trusted-host pypi.douban.com'
 # do not include http/https
 COMMON_GIT_MIRROR: 'github.com'
 # override this var to set a different hostname
