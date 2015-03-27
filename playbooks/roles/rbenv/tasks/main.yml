@@ -71,7 +71,7 @@
   register: installable_ruby_vers
   ignore_errors: yes
 
-### in this block, we (re)install ruby-build if it doesn't exist or if it can't install the requested version
+## in this block, we (re)install ruby-build if it doesn't exist or if it can't install the requested version
 - name: create temporary directory
   command: mktemp -d
   register: tempdir

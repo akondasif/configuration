@@ -58,7 +58,7 @@ EDXAPP_ZENDESK_API_KEY: ''
 EDXAPP_CELERY_USER: 'celery'
 EDXAPP_CELERY_PASSWORD: 'celery'
 
-EDXAPP_PLATFORM_NAME: 'edX'
+EDXAPP_PLATFORM_NAME: 'ddymooc'
 
 EDXAPP_CAS_SERVER_URL: ''
 EDXAPP_CAS_EXTRA_LOGIN_PARAMS: ''
@@ -96,16 +96,16 @@ EDXAPP_LMS_PREVIEW_NGINX_PORT: 18020
 EDXAPP_CMS_NGINX_PORT: 18010
 EDXAPP_CMS_SSL_NGINX_PORT: 48010
 
-EDXAPP_LANG: 'en_US.UTF-8'
-EDXAPP_TIME_ZONE: 'America/New_York'
+EDXAPP_LANG: 'zh_CN.UTF-8'
+EDXAPP_TIME_ZONE: 'Asia/Shanghai'
 
-EDXAPP_TECH_SUPPORT_EMAIL: 'technical@example.com'
-EDXAPP_CONTACT_EMAIL: 'info@example.com'
-EDXAPP_BUGS_EMAIL: 'bugs@example.com'
-EDXAPP_DEFAULT_FROM_EMAIL: 'registration@example.com'
-EDXAPP_DEFAULT_FEEDBACK_EMAIL: 'feedback@example.com'
-EDXAPP_DEFAULT_SERVER_EMAIL: 'devops@example.com'
-EDXAPP_BULK_EMAIL_DEFAULT_FROM_EMAIL: 'no-reply@example.com'
+EDXAPP_TECH_SUPPORT_EMAIL: ''
+EDXAPP_CONTACT_EMAIL: 'xiaodunxin@126.com'
+EDXAPP_BUGS_EMAIL: 'xiaodunxin@126.com'
+EDXAPP_DEFAULT_FROM_EMAIL: 'xiaodunxin@126.com'
+EDXAPP_DEFAULT_FEEDBACK_EMAIL: 'xiaodunxin@126.com'
+EDXAPP_DEFAULT_SERVER_EMAIL: 'xiaodunxin@126.com'
+EDXAPP_BULK_EMAIL_DEFAULT_FROM_EMAIL: 'xiaodunxin@126.com'
 
 EDXAPP_ENV_EXTRA: {}
 EDXAPP_AUTH_EXTRA: {}
@@ -181,7 +181,8 @@ edxapp_upload_dir: "{{ edxapp_data_dir }}/uploads"
 edxapp_theme_dir: "{{ edxapp_data_dir }}/themes"
 edxapp_git_identity: "{{ edxapp_app_dir }}/edxapp-git-identity"
 edxapp_git_ssh: "/tmp/edxapp_git_ssh.sh"
-edxapp_pypi_local_mirror: "http://localhost:{{ devpi_port }}/root/pypi/+simple"
+#edxapp_pypi_local_mirror: "http://localhost:{{ devpi_port }}/root/pypi/+simple"
+edxapp_pypi_local_mirror: 'http://pypi.douban.com/simple'
 edxapp_workers:
   - queue: low
     service_variant: cms
@@ -334,7 +335,7 @@ generic_env_config:  &edxapp_generic_env
   WIKI_ENABLED: true
   SYSLOG_SERVER:  $EDXAPP_SYSLOG_SERVER
   SITE_NAME:  $EDXAPP_SITE_NAME
-  LOG_DIR:  "{{ COMMON_DATA_DIR }}/logs/edx"
+  LOG_DIR:  "{{ COMMON_DATA_DIR }}/log/edx"
   MEDIA_URL:  $EDXAPP_MEDIA_URL
   ANALYTICS_SERVER_URL:  $EDXAPP_ANALYTICS_SERVER_URL
   FEEDBACK_SUBMISSION_EMAIL: $EDXAPP_FEEDBACK_SUBMISSION_EMAIL
@@ -476,7 +477,7 @@ edxapp_theme_source_repo: 'https://{{ COMMON_GIT_MIRROR }}/Stanford-Online/edx-t
 edxapp_theme_version: 'HEAD'
 
 # make this the public URL instead of writable
-edx_platform_repo: "https://{{ COMMON_GIT_MIRROR }}/edx/edx-platform.git"
+edx_platform_repo: "https://git.oschina.net/diandiyun/ddymooc.git"
 # `edx_platform_version` can be anything that git recognizes as a commit
 # reference, including a tag, a branch name, or a commit hash
 edx_platform_version: 'release'

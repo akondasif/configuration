@@ -17,7 +17,7 @@ COMMON_CFG_DIR: "{{ COMMON_BASE_DIR }}/etc"
 
 COMMON_ENVIRONMENT: 'default_env'
 COMMON_DEPLOYMENT: 'default_deployment'
-COMMON_PYPI_MIRROR_URL: 'https://pypi.python.org/simple'
+COMMON_PYPI_MIRROR_URL: 'http://pypi.douban.com/simple'
 # do not include http/https
 COMMON_GIT_MIRROR: 'github.com'
 # override this var to set a different hostname
@@ -37,10 +37,10 @@ COMMON_MOTD_TEMPLATE: "motd.tail.j2"
 
 COMMON_MYSQL_READ_ONLY_USER: 'read_only'
 COMMON_MYSQL_READ_ONLY_PASS: 'password'
-COMMON_MYSQL_ADMIN_USER: 'admin'
-COMMON_MYSQL_ADMIN_PASS: 'password'
+COMMON_MYSQL_ADMIN_USER: 'root'
+COMMON_MYSQL_ADMIN_PASS: '8uhbYGVTFCRDXESZ'
 
-COMMON_MONGO_READ_ONLY_USER: 'read_only'
+COMMON_MONGO_READ_ONLY_USER: 'edxapp'
 COMMON_MONGO_READ_ONLY_PASS: 'password'
 
 common_debian_pkgs:

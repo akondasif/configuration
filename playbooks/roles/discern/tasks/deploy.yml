@@ -7,17 +7,17 @@
   sudo_user: "{{ supervisor_user }}"
   with_items: ['discern', 'discern_celery']
 
-- name: enable supervisor scripts - discern, discern_celery
-  file: >
-    dest={{ supervisor_available_dir }}/{{ item }}.conf
-    dest={{ supervisor_cfg_dir }}/{{ item }}.conf
-    owner={{ supervisor_user }}
-    state=link
-    force=yes
-    mode=0644
-  sudo_user: "{{ supervisor_user }}"
-  with_items: ['discern', 'discern_celery']
-  when: not disable_edx_services
+#- name: enable supervisor scripts - discern, discern_celery
+#  file: >
+#    dest={{ supervisor_available_dir }}/{{ item }}.conf
+#    dest={{ supervisor_cfg_dir }}/{{ item }}.conf
+#    owner={{ supervisor_user }}
+#    state=link
+#    force=yes
+#    mode=0644
+#  sudo_user: "{{ supervisor_user }}"
+#  with_items: ['discern', 'discern_celery']
+#  when: not disable_edx_services
 
 #Upload config files for django (auth and env)
 - name: create discern application config env.json file
@@ -65,7 +65,7 @@
 
 - name: install ease python package
   shell: >
-    {{ discern_venv_dir }}/bin/activate; cd {{ discern_ease_code_dir }}; python setup.py install
+    {{ discern_venv_dir }}/bin/activate; cd {{ discern_ease_code_dir }}; /edx/app/discern/venvs/discern/bin/python setup.py install
   notify:
     - restart discern
 
